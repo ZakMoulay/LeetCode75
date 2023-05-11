@@ -15,7 +15,7 @@ public class ReverseWordInString {
             char c = s.charAt(i);
             if (c != ' ')
                 sb1.append(c);
-            if ((c == ' ' || i == 0) && sb1.length() > 0) {
+            if (c == ' ' || i == 0)  {
                 if (sb2.length() > 0) {
                     sb2.append(" ");
                 }
