@@ -1,4 +1,10 @@
-// 443
+
+
+
+import java.util.Arrays;
+
+public class StringCompression {
+    // 443
 //Input: chars = ["a","a","b","b","c","c","c"]
 //        Output: Return 6, and the first 6 characters of the input
 //        array should be: ["a","2","b","2","c","3"]
@@ -16,31 +22,39 @@
 //        since it's a single character.
 
 
-
-public class StringCompression {
-
-
     public static void main(String[] args) {
-        char[] arr = {'a','a','b','b','c','c','c'};
+        char[] arr = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+
         System.out.println(compress(arr));
     }
+
     public static int compress(char[] chars) {
+        System.out.println(chars);
         int ans = 0;
         int n = chars.length;
         for (int i = 0; i < n; ) {
             char myChar = chars[i];
             int count = 0;
-            while ( i < n && chars[i] == myChar  ) {
+            while (i < n && chars[i] == myChar) {
                 ++count;
                 ++i;
             }
             chars[ans++] = myChar;
-            if ( count > 1 ) {
-                for ( char c : String.valueOf(count).toCharArray()) {
+            if (count > 1) {
+                for (char c : String.valueOf(count).toCharArray()) {
                     chars[ans++] = c;
                 }
             }
         }
+        System.out.println(chars);
         return ans;
+    }
+
+    public static boolean findIndexOfNumber(int[] array, int number) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number)
+                return true;
+        }
+        return false;
     }
 }
