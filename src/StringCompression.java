@@ -50,11 +50,4 @@ public class StringCompression {
         return ans;
     }
 
-    public static boolean findIndexOfNumber(int[] array, int number) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == number)
-                return true;
-        }
-        return false;
-    }
 }
